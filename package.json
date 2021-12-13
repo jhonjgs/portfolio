@@ -1,0 +1,29 @@
+{
+  "name": "Portfolio",
+  "version": "0.0.1",
+  "description": "This is my personal portfolio ",
+  "main": "app.js",
+  "repository": "https://github.com/jhonjgs/portfolio.git",
+  "author": "Jhon Guerrero <devjhonjgs@gmail.com>",
+  "license": "proprietary",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "sass-c": "sass --watch ./public/sass/style.sass ./public/css/style.css"
+  },
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.4",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-minify": "^3.1.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.45.0",
+    "uglify": "^0.1.5"
+  }
+}

@@ -1,0 +1,31 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="shortcut icon", href="/img/favicon.ico", type="image/x-icon")
+        link(rel="stylesheet", href="/css/style.css")
+        title Jhon | Portfolio
+    body
+        main
+            .loading
+                .logo
+                    include ./img/cat_outline
+                .bar 
+                    p Jhon Guerrero
+                
+            
+            header 
+                .logo
+                    img(src="/img/Cat_outline_logo.svg", width="50" alt="Jhon Guerrero dev logo")
+                p Jhon Guerrero
+
+            include ./lib/menu
+
+            tbody
+                .scroll
+                article
+                    include ./lib/home
+
+    script(src="/js/main.js") 

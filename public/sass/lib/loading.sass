@@ -1,0 +1,98 @@
+@keyframes rotate
+    0%
+        transform: rotate(0)
+    100%
+        transform: translateX(-100%) translateY(-100vh) rotate(-180deg)
+
+@keyframes loading
+    from
+        width: 0%
+        fill-opacity: 0
+        stroke-width: .1
+
+        
+    to
+        width: 100%
+        fill-opacity: 1
+        stroke-width: 1
+
+.loading
+    position: absolute
+    transform: none
+    left: 0
+    right: 0
+    width: 100%
+    height: 100vh
+    background: $Dark
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center 
+    animation: rotate .8s 2.6s forwards
+    z-index: 9
+    display: none
+
+    .logo
+        width: 50%
+        height: 50%
+
+        svg
+            width: 100%
+            height: 100%
+        
+    .bar 
+        width: 50%
+        height: 50px
+        border: solid 1px $Primary
+        border-radius: 25px
+        margin-top: 25px
+        position: relative
+        overflow: hidden
+
+        p
+            position: relative
+            font-size: 35px
+            text-align: center
+            font-weight: Bold
+            color: $Loading-text
+            z-index: 1
+
+
+
+    .bar:after, .bar:before
+        content: ""
+        position: absolute
+        height: 100%
+        left: 0
+        top: 0
+        animation: loading 2s forwards .5s
+
+            
+
+    .bar:before
+        z-index: 1
+        background-color: $Primary
+        filter: invert(1)
+            
+
+    .bar:after
+        -webkit-backdrop-filter: invert(1)
+        backdrop-filter: invert(1)
+        z-index: 3
+        margin: 0
+
+    .logo 
+        svg 
+            
+            .cat_outline
+                &*
+                    transition: .5s
+
+                &.svg_cat_str
+                    stroke: #554e75 
+                    stroke-width: 1
+                    stroke-miterlimit: 10
+
+                &.ear, &.hair, &.head, &.nose
+                    fill-opacity: 0 
+                    animation: loading 2s forwards .5s
