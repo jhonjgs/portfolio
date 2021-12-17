@@ -49,7 +49,8 @@ class Menu {
         const getNumber = text => parseInt(text.split("px")[0])
         return `${
             (getNumber(Styles.height) 
-            + getNumber(Styles.marginBottom))
+            + getNumber(Styles.marginBottom)
+            + getNumber(Styles.marginTop))
             * element.children[1].children.length
         }px`
     }
@@ -73,8 +74,7 @@ class Menu {
         const active = this.#searchUp(element, this.toggleActiveAttr, "")
         const moreOptions = container.$("."+this.moreContainerClass)
         if(moreOptions) moreOptions.style.height = this.#getHeight(container)
-
-        container.$(`[${this.toggleActiveAttr}]`).classList.add(this.openClass)
+            container.$(`[${this.toggleActiveAttr}]`).classList.add(this.openClass)
         active.classList.add(this.activeClass)
     }
 
@@ -96,7 +96,7 @@ const screenVisible = () => {
 
             article.removeAttribute("style")
     })
-    $(location.hash).style.opacity = "1"
+    $(location.hash).setAttribute("style", `opacity: 1; z-index: 3`)
 
 }
 
@@ -105,14 +105,14 @@ screenVisible()
 
 
 
-const observer = new IntersectionObserver((entrys, observer)=> {
-    entrys.forEach(entry => {
-        if(entry.isIntersecting)
-            location.href = `#${entry.target.id}`
-    })
-}, {threshold: 1, rootMargin: "0px 0px 60% 0px"})
+// const observer = new IntersectionObserver((entrys, observer)=> {
+//     entrys.forEach(entry => {
+//         if(entry.isIntersecting)
+//             location.href = `#${entry.target.id}`
+//     })
+// }, {threshold: 1, rootMargin: "0px 0px 60% 0px"})
 
-_$("article[id]").forEach(article => observer.observe(article))
+// _$("article[id]").forEach(article => observer.observe(article))
 
 setTimeout(() => {
    location.href = "/" 

@@ -1,0 +1,119 @@
+article.skill
+    
+    .container
+        display: flex
+        flex-wrap: wrap
+        position: relative
+
+        .content
+            display: flex
+            flex-direction: column
+            align-items: center
+            width: 66%
+            height: 90vh
+            margin-top: 5vh
+
+            img.device
+                height: 40vh
+
+            .cite
+                display: flex
+                align-items: center
+                width: 70%
+                height: fit-content
+                font-size: 3vh
+                font-weight: 500
+                margin: 3vh 0 0 5vh
+
+                .bar 
+                    width: .6vh
+                    background: $Primary
+                    height: 12vh
+                    margin-right: 1.3vh
+                    border-radius: .3vh
+
+                p
+                    width: 90%
+
+            .love 
+                display: flex
+                align-items: center
+                width: 70% 
+                margin: 8vh 0 0 5vh
+
+                img    
+                    width: 5.5vh
+                    height: 5.5vh
+
+                p 
+                    font-size: 2.5vh
+                    width: 75%
+                    margin: 0 2vh
+
+        .next_preview
+            position: absolute
+            display: flex
+            justify-content: center
+            align-items: center
+            top: -10vh
+            right: 0
+            height: 100vh
+            background: $Dark
+            width: 33%
+
+            .next_content
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-direction: column
+                img
+                    width: 48vh
+                    height: 25vh
+
+                h2 
+                    color: $Primary
+                    text-align: center
+                    font-size: 4.5vh
+                    margin-top: 3vh
+ 
+    &#desktop 
+        .container .next_preview img 
+            height: 55vh
+
+    &#android 
+        .container .next_preview 
+            h2 
+                font-size: 4vh
+
+            img 
+                height: 45vh
+                width: 45vh
+
+    &#backend 
+        svg
+            width: 46vh
+            height: 39vh
+        
+            .one, .tree, .five
+                    animation: top-bottom 5s infinite
+
+            .two, .four
+                    animation: left-right 5s infinite
+
+            path[_width]
+                stroke-width: 3
+
+            path[_fill]
+                fill: $Primary
+
+            path[_fill2]
+                fill: $Shadow-dark
+
+            path[_resalt]
+                fill: $White
+
+            path[_stroke]
+                stroke: $Primary
+
+            path[_transparency]
+                fill: $Dark

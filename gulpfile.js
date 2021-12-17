@@ -18,7 +18,7 @@ const minijs = cb => {
 const buildSass = cb => {
     src("public/sass/style.sass")
     .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(sourcemaps.write("./"))
     .pipe(dest("public/css"))
     cb()

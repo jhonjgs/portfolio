@@ -1,14 +1,5 @@
-article[id]
-    display: flex
-    flex-wrap: wrap 
-    width: 100%
-    height: 100vh
-    align-items: flex-end
-    transition: .5s
-    opacity: 0
-    position: fixed
-    z-index: 2
-    
+article#home
+    background: $Dark
     .right
         display: flex
         flex-wrap: wrap
@@ -20,15 +11,14 @@ article[id]
             font-size: 5vh
             color: $Secondary
             font-weight: 500
-            margin: 22px 0
+            margin: 2vh 0
 
         p
             display: block
-            width: 49%
             font-size: 4vh
             color: $White
             font-weight: 500
-            margin: 22px 0
+            margin: 2vh 2vh 0 0
 
     .aside 
         width: 49%
@@ -36,54 +26,79 @@ article[id]
         h1
             color: $Secondary
             font-size: 5vh
-            margin: 12px 0
+            margin: 1.2vh 0
             font-weight: 500
 
             
         p 
             color: $White
-            font-size: 3vh
+            font-size: 2.5vh
             font-weight: 500
 
-    .space 
-        width: 15%
-        height: 100vh
-        display: block
-
-    .container 
-        width: 84%
-        height: calc(100vh - 60px)
         
-        .head
-            display: flex
+    .head
+        display: flex
+        width: 100%
+        height: 50%
+        align-items: center
+        justify-content: space-evenly
+
+        .right 
+            position: relative
+            width: 51%
+
+            h2 
+                font-size: 5vh 
+                font-weight: 500 
+                color: $Secondary
+                position: absolute
+                top: 50%
+                left: 0
+
+        svg
+            height: 100%
             width: 100%
-            height: 50%
-            align-items: center
-            justify-content: space-evenly
+            .one, .tree, .five
+                    animation: top-bottom 5s infinite
 
-            svg
-                height: 100%
-                width: 100%
+            .two, .four
+                    animation: left-right 5s infinite
 
-            .left
-                height: 100%
+            path[_width]
+                stroke-width: 3
 
-            .left, .right
-                margin: 0 22px
+            path[_fill]
+                fill: $Primary
+
+            path[_fill2]
+                fill: $Shadow-dark
+
+            path[_resalt]
+                fill: $White
+
+            path[_stroke]
+                stroke: $Primary
+
+            path[_transparency]
+                fill: $Dark
+
+        .left
+            height: 100%
+
             
-            .right
-                height: 100%
+        .right
+            height: 100%
                 
-                .right-left
-                        animation: top-bottom 5s infinite
-                .left-right
-                        animation: left-right 5s infinite 
+            .right-left
+                    animation: top-bottom 5s infinite
+            .left-right
+                    animation: left-right 5s infinite 
 
-        .body
-            display: flex
-            width: 100%
-            height: 50%
-            align-items: center
+    .body
+        display: flex
+        width: 100%
+        height: 50%
+        align-items: center
             
 
 @keyframes top-bottom

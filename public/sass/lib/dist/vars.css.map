@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["vars.sass"],"sourcesContent":["$Dark: #181822\r\n$Black: #555\r\n$Primary: #585181\r\n$Secondary: #7A6FB9\r\n$Third: #4b1c81\r\n$White: #F2F2F2\r\n$Shadow: #0002\r\n$Shadow-dark: #2F2D46\r\n$Loading-text: #584E59"],"file":"vars.css"}
