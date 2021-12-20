@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["contactme.sass"],"sourcesContent":["article#contact_me\r\n    .container\r\n        .form_contauner \r\n            width: 60vh \r\n            height: 70vh \r\n\r\n            form \r\n\r\n                input \r\n                    display: block"],"file":"contactme.css"}

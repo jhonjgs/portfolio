@@ -16,15 +16,29 @@ html(lang="es")
                     p Jhon Guerrero
                 
             
-            header 
-                .logo
-                    img(src="/img/Cat_outline_logo.svg", width="50" alt="Jhon Guerrero dev logo")
-                p Jhon Guerrero
+            header
+                div.title
+                    .logo
+                        img(src="/img/Cat_outline_logo.svg", width="50" alt="Jhon Guerrero dev logo")
+                    p Jhon Guerrero
 
+                include ./img/menu
+                
             include ./lib/menu
 
             tbody
                 .scroll
+                    .view(id="home") 
+                    .view(id="skills") 
+                    .view(id="web") 
+                    .view(id="desktop") 
+                    .view(id="android") 
+                    .view(id="backend") 
+                    .view(id="skill_programming") 
+                    .view(id="skill_design") 
+                    .view(id="portfolio") 
+                    .view(id="about_me") 
+                    .view(id="contact_me") 
                 article
                     include ./lib/home
                     include ./lib/skills

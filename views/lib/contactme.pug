@@ -1,8 +1,24 @@
-article#contact_me
+article(scr="#contact_me")
     .space 
     .container 
-        form(action="")
-            input(type="text", placeholder="Nombre")
-            input(type="text" placeholder="Correo")
-            input(type="text" placeholder="Celular")
+        .form_container
+            h2 Contactame
+            form
+                input(type="text", placeholder="Nombre")
+                input(type="text" placeholder="Correo")
+                input(type="text" placeholder="Celular")
+                div(contenteditable="true").message
+                input(type="button", value="Enviar")
+
+
+        .social 
+            a(href="https://wa.me/573013963427?text=Hola! Me interesa alguno de tus servicios." target="Blanck").red
+                include ../img/whatsapp
+                span.name Whatsapp
+            a(href="https://torre.co/sanchezjhonjairo02" target="Blanck").red
+                include ../img/torre
+                span.name Torre
+            a(href="https://www.linkedin.com/in/jhon-guerrero-sanchez-9516bb1ab/" target="Blanck").red
+                include ../img/linkedin
+                span.name Linkedin
             

@@ -1,0 +1,75 @@
+article[scr="#contact_me"]
+    .container
+        display: flex
+        flex-direction: column
+        justify-content: space-evenly
+        align-items: center
+
+        .form_container 
+            width: 60vh 
+            height: 70vh 
+
+            h2 
+                font-size: 4vh
+                color: $Primary
+
+            form 
+
+                input, .message
+                    display: block
+                    height: 6vh 
+                    margin: 3vh 0
+                    width: 90%
+                    padding: .5vh
+                    font-size: 2.5vh
+                    font-weight: 500
+                    color: $Dark
+                    border-bottom: .3vh solid $Primary
+                    background: transparent
+
+                input::placeholder 
+                        color: $Black
+
+
+                input[type="button"]
+                    background: $Primary
+                    border-radius:  1vh
+                    width: 93%
+                    color: $White
+                    bottom: none
+                    cursor: pointer
+
+                .message
+                    height: 5vh
+                    min-height: 6vh
+                    max-height: 18vh
+                    overflow-x: scroll
+                    padding: 0.5vh
+
+                
+                    &:empty::after 
+                        content:  "Ecribe aquí tu mensaje"
+                        color: $Black
+                        padding: .3vh
+
+        .social
+            display: flex
+            justify-content: center
+            align-items: center
+            height: 10vh 
+            width: 100%
+
+            .red
+                display: flex 
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                margin: 0 5vh
+
+                svg 
+                    width: 6vh
+
+                .name 
+                    font-size: 2.5vh 
+                    font-weight: 500
+                    color: $Black

@@ -87,33 +87,34 @@ class Menu {
 
 const menu = new Menu("swicht", "active", "open", "more", "option")
 
-location.href = location.hash.length > 2? location.hash : "#home"
+const screenVisible = (screen) => {
 
-const screenVisible = () => {
-    menu.open($(`[href="${location.hash}"]`))
+    menu.open($(`[href="${screen}"]`))
 
-    _$("article[id]").forEach(article => {
+    _$("article[scr]").forEach(article => {
 
             article.removeAttribute("style")
     })
-    $(location.hash).setAttribute("style", `opacity: 1; z-index: 3`)
-
+    $(`[scr="${screen}"]`).setAttribute("style", `opacity: 1; z-index: 3`)
 }
 
-onhashchange = screenVisible
-screenVisible()
+onhashchange = () => screenVisible(location.hash)
+
+const threshold = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+
+const observer = new IntersectionObserver((entrys, observer)=> {
+
+    
+
+    entrys.forEach(entry => {
+            if(entry.isIntersecting) screenVisible("#"+entry.target.id)
+    })
+
+}, { threshold})
 
 
-
-// const observer = new IntersectionObserver((entrys, observer)=> {
-//     entrys.forEach(entry => {
-//         if(entry.isIntersecting)
-//             location.href = `#${entry.target.id}`
-//     })
-// }, {threshold: 1, rootMargin: "0px 0px 60% 0px"})
-
-// _$("article[id]").forEach(article => observer.observe(article))
+_$(".view").forEach(article => observer.observe(article))
 
 setTimeout(() => {
-   location.href = "/" 
+   location.reload()
 }, 1000000);
