@@ -1,0 +1,61 @@
+@keyframes right-left
+    0%
+        transform: translateX(10%)
+    50%
+        transform: translateX(2%)
+    100%
+        transform: translateX(10%)
+            
+            
+@keyframes left-right
+    0%
+        transform: translateX(-10%)
+    50%
+        transform: translateX(0)
+    100%
+        transform: translateX(-10%)
+        
+@keyframes rotate
+    0%
+        transform: rotate(0)
+    100%
+        transform: translateX(-100%) translateY(-100vh) rotate(-180deg)
+
+@keyframes loading
+    from
+        width: 0%
+        fill-opacity: 0
+        stroke-width: .1
+
+        
+    to
+        width: 100%
+        fill-opacity: 1
+        stroke-width: 1
+svg.left-right-animation
+    width: 46vh
+    height: 39vh
+
+    .one, .tree, .five
+            animation: right-left 5s infinite
+
+    .two, .four
+            animation: left-right 5s infinite
+
+    path[_width]
+        stroke-width: 3
+
+    path[_fill]
+        fill: var(--Primary)
+
+    path[_fill2]
+        fill: var(--Shadow-dark)
+
+    path[_resalt]
+        fill: var(--White)
+
+    path[_stroke]
+        stroke: var(--Primary)
+
+    path[_transparency]
+        fill: var(--Dark)

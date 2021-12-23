@@ -9,10 +9,6 @@ article[scr="#contact_me"]
             width: 60vh 
             height: 70vh 
 
-            h2 
-                font-size: 4vh
-                color: $Primary
-
             form 
 
                 input, .message
@@ -23,19 +19,19 @@ article[scr="#contact_me"]
                     padding: .5vh
                     font-size: 2.5vh
                     font-weight: 500
-                    color: $Dark
-                    border-bottom: .3vh solid $Primary
+                    color: var(--Dark)
+                    border-bottom: .3vh solid var(--Primary)
                     background: transparent
 
                 input::placeholder 
-                        color: $Black
+                        color: var(--Black)
 
 
                 input[type="button"]
-                    background: $Primary
+                    background: var(--Primary)
                     border-radius:  1vh
                     width: 93%
-                    color: $White
+                    color: var(--White)
                     bottom: none
                     cursor: pointer
 
@@ -49,7 +45,7 @@ article[scr="#contact_me"]
                 
                     &:empty::after 
                         content:  "Ecribe aquí tu mensaje"
-                        color: $Black
+                        color: var(--Black)
                         padding: .3vh
 
         .social
@@ -72,4 +68,4 @@ article[scr="#contact_me"]
                 .name 
                     font-size: 2.5vh 
                     font-weight: 500
-                    color: $Black
+                    color: var(--Black)

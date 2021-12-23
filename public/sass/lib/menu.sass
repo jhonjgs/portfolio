@@ -10,15 +10,15 @@ nav
     a
         display: block 
         margin: 1vh 0
-        color: $Primary
+        color: var(--Primary)
         font-weight: 500
         font-size: 4vh
         pointer-events: all
 
-    .option
+    .menu_option
         pointer-events: none
 
-        .more
+        .dropdown
             overflow: hidden
             height: 0
             transition: .5s
@@ -30,7 +30,7 @@ nav
                 pointer-events: all
 
         .open
-            color: $Third
+            color: var(--Third)
             
-        [swicht].active
-            color: $Secondary 
+        .selected
+            color: var(--Secondary )

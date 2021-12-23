@@ -11,17 +11,17 @@ HTMLElement.prototype._$ = function(querySelector){
     return this.querySelectorAll(querySelector)
 }
 class Menu {
-    constructor(toggleActiveAttr, activeClass, openClass, moreContainerClass, optionClass){
+    constructor(selectablesAttr, activeCls, openCls, dropdownCls, optionCls){
 
-        this.toggleActiveAttr = toggleActiveAttr
-        this.activeClass = activeClass
-        this.openClass = openClass
-        this.moreContainerClass = moreContainerClass
-        this.optionClass = optionClass
+        this.selectablesAttr = selectablesAttr
+        this.activeCls = activeCls
+        this.openCls = openCls
+        this.dropdownCls = dropdownCls
+        this.optionCls = optionCls
     }
 
     //search in the parents of the element
-    #searchUp(element, attr, search){
+    #searchUp(element, attr, query){
 
         //input validation
         if(
@@ -33,7 +33,7 @@ class Menu {
 
         //get the first matching parent
         let parent = element
-        while(!parent?.getAttribute(attr)?.includes(search) && parent.tagName != "HTML"){
+        while(!parent?.getAttribute(attr)?.includes(query) && parent.tagName != "HTML"){
 
             parent = parent.parentElement
         }
@@ -57,25 +57,29 @@ class Menu {
 
     // Remove class and styles from elements
     #removeClass(){
-        _$(`.${this.moreContainerClass}`)
+        _$(`.${this.dropdownCls}`)
             .forEach(e => e.removeAttribute("style"))
 
-        _$(`[${this.toggleActiveAttr}]`)
+        _$(`[${this.selectablesAttr}]`)
             .forEach(e => {
-                e.classList.remove(this.activeClass)
-                e.classList.remove(this.openClass)
+                e.classList.remove(this.activeCls)
+                e.classList.remove(this.openCls)
             })
     }
 
     //Set styles for elements active and open
     #setStyles(element){
 
-        const container = this.#searchUp(element, "class", this.optionClass)
-        const active = this.#searchUp(element, this.toggleActiveAttr, "")
-        const moreOptions = container.$("."+this.moreContainerClass)
-        if(moreOptions) moreOptions.style.height = this.#getHeight(container)
-            container.$(`[${this.toggleActiveAttr}]`).classList.add(this.openClass)
-        active.classList.add(this.activeClass)
+        const container = this.#searchUp(element, "class", this.optionCls)
+        const active = this.#searchUp(element, this.selectablesAttr, "")
+        const moreOptions = container.$("."+this.dropdownCls)
+        
+        if(moreOptions) {
+            moreOptions.style.height = this.#getHeight(container)
+            console.log("xd")    
+        }
+        container.$(`[${this.selectablesAttr}]`).classList.add(this.openCls)
+        active.classList.add(this.activeCls)
     }
 
     //Open the item and close the others
@@ -87,34 +91,56 @@ class Menu {
 
 const menu = new Menu("swicht", "active", "open", "more", "option")
 
+
+
+let openScreen = undefined
+
 const screenVisible = (screen) => {
 
-    menu.open($(`[href="${screen}"]`))
+    const screenToShow = $(`[scr="${screen}"]`)
+    
+    if(openScreen !== screen){
 
-    _$("article[scr]").forEach(article => {
+        menu.open($(`[href="${screen}"]`))
 
-            article.removeAttribute("style")
-    })
-    $(`[scr="${screen}"]`).setAttribute("style", `opacity: 1; z-index: 3`)
+        _$("article[scr]").forEach(_screen => {
+
+            if(_screen !== screenToShow){
+
+                _screen.removeAttribute("style")
+            }
+        })
+
+        openScreen = screen
+    }
+
+    screenToShow.setAttribute("style", `opacity: 1; z-index: 3`)
 }
+
+location.hash = location.hash || "home"
+screenVisible(location.hash)
+const observerFunction = entrys => {
+
+    entrys.forEach(entry => {
+        const id = entry.target.id
+
+        if(entry.isIntersecting && `#${id}` !== location.hash) {
+
+            location.hash = id
+        }
+    })
+}
+
+const observer = new IntersectionObserver(observerFunction, {threshold: 1})
+
+
 
 onhashchange = () => screenVisible(location.hash)
 
-const threshold = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
-
-const observer = new IntersectionObserver((entrys, observer)=> {
-
-    
-
-    entrys.forEach(entry => {
-            if(entry.isIntersecting) screenVisible("#"+entry.target.id)
-    })
-
-}, { threshold})
 
 
 _$(".view").forEach(article => observer.observe(article))
 
 setTimeout(() => {
    location.reload()
-}, 1000000);
+}, 10000000);

@@ -1,21 +1,3 @@
-@keyframes rotate
-    0%
-        transform: rotate(0)
-    100%
-        transform: translateX(-100%) translateY(-100vh) rotate(-180deg)
-
-@keyframes loading
-    from
-        width: 0%
-        fill-opacity: 0
-        stroke-width: .1
-
-        
-    to
-        width: 100%
-        fill-opacity: 1
-        stroke-width: 1
-
 .loading
     position: fixed
     transform: none
@@ -23,7 +5,7 @@
     right: 0
     width: 100%
     height: 100vh
-    background: $Dark
+    background: var(--Dark)
     display: flex
     flex-direction: column
     justify-content: center
@@ -46,7 +28,7 @@
         align-items: center
         width: 50%
         height: 5vh
-        border: solid 1px $Primary
+        border: solid 1px var(--Primary)
         border-radius: 2.5vh
         margin-top: 2.5vh
         position: relative
@@ -57,7 +39,7 @@
             font-size: 3.5vh
             text-align: center
             font-weight: Bold
-            color: $Loading-text
+            color: var(--Loading-text)
             z-index: 1
 
 
@@ -74,7 +56,7 @@
 
     .bar:before
         z-index: 1
-        background-color: $Primary
+        background-color: var(--Primary)
         filter: invert(1)
             
 

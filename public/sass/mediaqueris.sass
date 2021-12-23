@@ -1,0 +1,142 @@
+@media screen and (orientation:portrait) 
+    nav
+        transform: translateX(-100vw)
+        background: var(--White)
+        width: 80vw
+
+    header
+        z-index: 8
+        svg 
+            display: block
+            width: 6vh
+            height: 3vh
+
+        .title 
+            margin: 2vh
+        
+        .logo 
+            img 
+                height: 5vh
+        p
+            font-size: 3vh
+
+
+    article[scr]
+        .space 
+            display: none 
+        .container
+            width: 100% 
+        
+            .content 
+                height: 65vh
+                width: 100%
+
+                img.device
+                    height: 24vh 
+                
+                .cite 
+                    font-size: 2vh 
+                    margin: 3vh 0 0 -2vh
+
+                .love 
+                    margin: 3vh 0 0 -1vh
+                    width: 73%
+
+                    img 
+                        width: 4.5vh
+                        height: 4.5vh
+
+                    p
+                        font-size: 1.5vh
+
+                    
+
+            .next_preview
+                top: auto 
+                bottom: 0
+                width: 100vw
+                height: 35vh
+
+                .next_content
+                    img
+                        width: 40vh
+
+                    h2 
+                        font-size: 3.5vh
+
+    article[scr="#home"]
+        .head
+            .right 
+                display: none
+
+        .body 
+            .aside 
+                display: none
+
+            .text 
+                width: 100%
+                margin-left: 2vh
+
+    article[scr="#skills"]
+        .container
+            .intro 
+                max-width: 90% 
+                width: 90%
+                margin-top: 2vh
+
+                h2
+                    font-size: 4vh
+
+                p
+                    font-size: 3vh
+
+            .image 
+                display: none
+
+    article.skill[scr="#desktop"]
+        .container 
+            .next_preview 
+                .next_content 
+                    img 
+                        height: 20vh
+
+
+    article.skill[scr="#android"]
+        .container 
+            .next_preview 
+                .next_content 
+                    img 
+                        height: 22vh
+                        width: 22vh
+
+    article.skill[scr="#backend"]
+        .container 
+            .next_preview 
+                .next_content 
+                    svg 
+                        height: 22vh
+                        width: 30vh
+
+    article.skill[scr="#about_me"]
+        .container 
+            .content 
+                margin: 1vh
+
+                p
+                    font-size: 2vh
+                    width: 100vw
+
+    article.skill.tech
+        .container 
+            .content
+
+                .head 
+                    width: 100vw
+
+                    h2
+                        font-size: 6vw
+
+                    
+                svg 
+                    width: 80vw 
+                    height: 22vh

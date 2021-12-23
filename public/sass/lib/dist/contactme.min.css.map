@@ -1,1 +1,0 @@
-{"version":3,"sources":["contactme.sass"],"names":[],"mappings":"AAAA,8CACE,MAAO,KACP,OAAQ,KAGV,yDACE,QAAS","file":"contactme.min.css","sourcesContent":["article#contact_me\r\n    .container\r\n        .form_contauner \r\n            width: 60vh \r\n            height: 70vh \r\n\r\n            form \r\n\r\n                input \r\n                    display: block"]}

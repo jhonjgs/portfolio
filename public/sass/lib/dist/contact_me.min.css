@@ -1,2 +1,0 @@
-@charset "UTF-8";article#contact_me .container{display:flex;justify-content:center;align-items:center}article#contact_me .container .form_container{width:60vh;height:70vh}article#contact_me .container .form_container form input{display:block;height:6vh;width:90%;margin:2vh}article#contact_me .container .form_container form div:empty::before{content:"Ecribe aquí tu mensaje"}
-/*# sourceMappingURL=contact_me.min.css.map */
